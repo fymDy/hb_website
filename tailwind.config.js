@@ -9,6 +9,9 @@ module.exports = {
   darkMode: 'media',  // 可选值:false, 'media' 或 'class'
   theme: {
     extend: {
+      backgroundImageGradient: {
+        'custom-gradient': 'linear-gradient(to right, #A4D3A4 0%, #4BA48C 100%)',
+      },
       screens: {
         'sm': '414px',   // 设置为你的移动端设计稿宽度
         'md': '768px',
