@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 14:51:40
- * @LastEditTime: 2024-08-24 14:43:41
+ * @LastEditTime: 2024-08-24 17:41:34
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/Home/index.tsx
@@ -14,7 +14,6 @@ import bgHeader from '@/assets/images/home/bg_header.png';
 
 const Home: React.FC = () => {
   return <div className="HomePage ">
-           {/* <HeaderMenu></HeaderMenu> */}
            <div
               style={{
                 backgroundImage: `url(${bgHeader})`,
@@ -24,6 +23,7 @@ const Home: React.FC = () => {
               }}
               className="w-full h-[896px] md:h-[1024px] lg:h-[1080px]"
             >
+                <HeaderMenu></HeaderMenu>
             </div>
           {/* <div className="header-bg bg-[url('@/assets/images/home/bg_header.png') bg-cover  bg-center w-full h-[896px] md:h-[1024px] lg:h-[1080px]"></div> */}
   </div>;

@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 16:08:00
- * @LastEditTime: 2024-08-24 14:34:39
+ * @LastEditTime: 2024-08-24 17:56:48
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/components/HeaderMenu/index.tsx
@@ -11,16 +11,16 @@ import React from 'react';
 import LogoSrc from "@/assets/images/home/bg_header.png"
 const HeaderMenu: React.FC = () => {
   const menuData=[
-    "Home","About","Services","CaseStudies","CultureEnvironment","Careers","Contacts"
+   "About","Services","CaseStudies","Culture & Environment","Careers","Contacts"
   ]
-  return <header className="HeaderMenu px-5 absolute top-0 left-0  overflow-hidden">
-        <dl className="flex flex-row justify-between h-[38px] md:h-[48px] lg:h-[84px]">
-            <dt className="bg-[url('@/assets/images/logo.svg')]  ">
-                {/* <img src={LogoSrc} alt="Logo" /> */}
+  return <header className="HeaderMenu w-full">
+       <div className='changeTheme flex flex-row justify-end items-center lg:w-[1650px] mx-auto  lg:h-[52px] text-white '>Company@emailaddress.com</div>
+        <dl className="flex flex-row justify-between items-center lg:w-[1650px] mx-auto  h-[38px] md:h-[50px] lg:h-[84px]">
+            <dt className="bg-[url('@/assets/images/logo.svg')] bg-no-repeat bg-cover bg-center lg:w-[290px] lg:h-[40px]  ">
             </dt>
-            <dd className="flex flex-row justify-between w-full ">
+            <dd className="grid grid-cols-6 gap-[10px] ">
                 {
-                menuData.map((item:string,i:number)=><a key={i} className='flex justify-center items-center'>{item}</a>)
+                menuData.map((item:string,i:number)=><a key={i}   className={`text-white hover:text-yellow-100 lg:text-[18px] cursor-pointer transition duration-300 ${i > 3 ? 'text-right' : ''}`}>{item}</a>)
                 }
             </dd>
         </dl>
