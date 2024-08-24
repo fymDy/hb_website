@@ -66,15 +66,50 @@
         }
     }
 
+    // function refreshRem(){
+    //     var width = docEl.getBoundingClientRect().width;
+    //     if (width / dpr > 540) {
+    //         width = 540 * dpr;
+    //     }
+    //     var rem = width / 10;
+    //     docEl.style.fontSize = rem + 'px';
+    //     flexible.rem = win.rem = rem;
+    // }
+
     function refreshRem(){
         var width = docEl.getBoundingClientRect().width;
-        if (width / dpr > 540) {
-            width = 540 * dpr;
+
+        if (width > 620) {
+            // PC端设备
+            docEl.style.fontSize = '12px'; 
+            flexible.rem = win.rem = 12;
+        } else {
+            if (width / dpr > 540) {
+                width = 540 * dpr;
+            }
+            var rem = width / 34.5; //基准值： 设计稿414/12px =34.5  1rem=12px
+            docEl.style.fontSize = rem + 'px';
+            flexible.rem = win.rem = rem;
         }
-        var rem = width / 10;
-        docEl.style.fontSize = rem + 'px';
-        flexible.rem = win.rem = rem;
     }
+
+    // function refreshRem(){
+    //     var width = docEl.getBoundingClientRect().width;
+    //     // if (width / dpr > 540) {
+    //     //     width = 540 * dpr;
+    //     // }
+    //  // 根据设备类型设置不同的 rem 基准值
+    //  var rem;
+    //  if (width >= 1024) { // PC 端
+    //      rem = 192;
+    //  } else if (width >= 768) { // 平板端
+    //      rem = 76.8;
+    //  } else { // 移动端
+    //      rem = 41.4;
+    //  }
+    //     docEl.style.fontSize = rem + 'px';
+    //     flexible.rem = win.rem = rem;
+    // }
 
     win.addEventListener('resize', function() {
         clearTimeout(tid);

@@ -1,0 +1,9 @@
+/* tailwind css默认样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @layer utilities {
+    .calc-height {
+      height: calc(100% - 38px - 50px);
+    }
+  } */

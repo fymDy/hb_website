@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //重置css
 import "./assets/css/reset.css";
-//响应式库flexiblejs
+//公共css 
+import "./assets/css/common.css"
+// //响应式库flexiblejs
 import "@/assets/js/flexible.js";
 
 import LazySuspense from "./components/LazySuspense";
