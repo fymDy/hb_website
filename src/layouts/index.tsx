@@ -1,6 +1,6 @@
 // src/layouts/AppLayout.jsx
 import ChangeLanguage from '@/components/ChangeLanguage';
-import HeaderMenu from '@/components/HeaderMenu';
+import HeaderTop from '@/components/HeaderTop';
 import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const AppLayout =() => {
                     <ChangeLanguage></ChangeLanguage>
               </div>
               <div className=' absolute top-[52px] left-1/2 transform -translate-x-1/2  z-10 '>
-                  <HeaderMenu></HeaderMenu> 
+                  <HeaderTop></HeaderTop> 
               </div>
           </div>
          <Outlet />
