@@ -21,7 +21,7 @@ const AppLayout =() => {
               {
                  !isMobile() && <ChangeLanguage></ChangeLanguage>
               }
-              <div className=' absolute top-[52px] left-1/2 transform -translate-x-1/2  z-10 '>
+              <div className=' absolute lg:top-[52px]  lg:left-1/2 transform lg:-translate-x-1/2  z-10 '>
                   <HeaderTop></HeaderTop> 
               </div>
           </div>
