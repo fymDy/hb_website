@@ -17,7 +17,7 @@ function MyDrawer({ visible,onClose, children }: DrawerProps) {
               visible={visible}
               onMaskClick={onClose}
               position='left'
-              bodyStyle={{ width: '60vw' }}
+              bodyStyle={{ width: '85vw' }}
             >
              <div style={{ padding: 20 }}></div>
             </Popup>

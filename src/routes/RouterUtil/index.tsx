@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 15:19:25
- * @LastEditTime: 2024-08-23 15:31:21
+ * @LastEditTime: 2024-08-25 15:45:19
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/routes/RouterUtil/index.tsx
@@ -23,21 +23,22 @@
  * @FilePath: /react-px2rem-antm-craco/src/router/routerUtil.ts
  */
 
-import CaseStudies from "@/views/CaseStudies";
-import Contacts from "@/views/Contacts";
-import CultureEnvironment from "@/views/CultureEnvironment";
-import Home from "@/views/Home";
+import CaseStudies from "@/views/Main/CaseStudies";
+import Contacts from "@/views/Main/Contacts";
+import CultureEnvironment from "@/views/Main/CultureEnvironment";
+import Home from "@/views/Main/Home";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export const routerPath = {
   SignIn:"signIn",
-  Home: "/Home",
-  About: "/About",
-  Services: "/Services",
-  CaseStudies: "/CaseStudies",
-  CultureEnvironment: "/CultureEnvironment",
-  Careers: "/Careers",
-  Contacts: "/Contacts",
+  Main: "/Main",
+  Home: "/Main/Home",
+  About: "/Main/About",
+  Services: "/Main/Services",
+  CaseStudies: "/Main/CaseStudies",
+  CultureEnvironment: "/Main/CultureEnvironment",
+  Careers: "/Main/Careers",
+  Contacts: "/Main/Contacts",
   NotFound: "/404",
 };
 

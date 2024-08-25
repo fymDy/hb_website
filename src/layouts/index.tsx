@@ -17,14 +17,14 @@ const AppLayout =() => {
   return (
     <div className=" container w-full mx-auto app-layout">
           {/* 全局渲染 */}
-          <div className='absolute top-0 left-1/2 transform -translate-x-1/2 z-10 lg:w-[1650px] lg:h-[134px] '>
+          {/* <div className='absolute top-0 left-1/2 transform -translate-x-1/2 z-10 lg:w-[1650px] lg:h-[134px] '>
               {
                  !isMobile() && <ChangeLanguage></ChangeLanguage>
               }
               <div className=' absolute lg:top-[52px]  lg:left-1/2 transform lg:-translate-x-1/2  z-10 '>
                   <HeaderTop></HeaderTop> 
               </div>
-          </div>
+          </div> */}
          <Outlet />
     </div>
   );

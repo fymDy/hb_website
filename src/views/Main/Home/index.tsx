@@ -1,10 +1,10 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 14:51:40
- * @LastEditTime: 2024-08-25 14:22:51
+ * @LastEditTime: 2024-08-25 16:35:56
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
- * @FilePath: /hb_website/src/views/Home/index.tsx
+ * @FilePath: /hb_website/src/views/main/Home/index.tsx
  */
 
 import React from "react";
@@ -32,6 +32,9 @@ const Home: React.FC = () => {
     <div className="HomePage ">
       <div
         style={{
+          position:"absolute",
+          top:'0',
+          zIndex:0,
           backgroundImage: `url(${bgHeader})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -46,7 +49,7 @@ const Home: React.FC = () => {
         //     <MySwiper swiperData={swiperData}></MySwiper>
         //   </div>
         // </div>:
-          <div className="MySwiper  justify-center  h-[896px] md:h-[1024px] lg:h-[1650px] mx-auto ">
+          <div className="MySwiper  justify-center  h-[896px] md:h-[1024px] lg:h-[1650px] mx-auto mt-[100px] ">
             <MySwiper swiperData={swiperData}></MySwiper>
         </div>
         }
