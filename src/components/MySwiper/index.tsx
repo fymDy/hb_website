@@ -8,14 +8,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 // 分别导入模块
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { isMobile } from '@/utils';
 
 const MySwiper = ({swiperData}:any) => {
   return (
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
-      navigation
+    //   navigation
       pagination={{ clickable: true 
       }}
       scrollbar={{ draggable: true }}
@@ -25,11 +26,17 @@ const MySwiper = ({swiperData}:any) => {
     >
   { 
      swiperData?.map((item: any, i: number) => ( <SwiperSlide key={i}>
-        <div  className='lg:h-[536px]  '>  
-            <p className='text-white text-[84px] break-words '>{item.text}</p>
-            <div className='flex text-white  text-[12px] mt-[100px]'>
-                <div className=' cursor-pointer bg-[linear-gradient(to_right,_#A4D3A4_0%,_#4BA48C_100%)] lg:w-[170px] lg:h-[56px] rounded-[12px] leading-[56px] text-center '>{item.btnContact}</div>
-                <div className='cursor-pointer lg:w-[242px] lg:h-[56px] rounded-[12px] border-2 border-solid border-white leading-[56px] text-center ml-10'>{item.btnView}</div>
+        <div  className='w-[382px]  md:w-[696px]  lg:w-[1650px] h-[896px] md:h-[1024px]  lg:h-[536px]  lg:mt-[130px] mx-auto '>  
+            <div className='lg:ml-[140px]'>
+            <p className={`text-[54px] md:text-[84px] lg:text-[84px] text-white font-black`}>{item.text1}</p>
+            <p className={`text-[54px] md:text-[84px] lg:text-[84px] text-white  font-normal`}>{item.text2}</p>
+            <div className='flex text-white  text-[12px]  mt-[30px] md:mt-[50px] lg:mt-[60px]'>
+                <div className=' cursor-pointer bg-[linear-gradient(to_right,_#A4D3A4_0%,_#4BA48C_100%)] w-[366px]  md:w-[170px]  lg:w-[170px] lg:h-[56px] rounded-[12px] leading-[56px] text-center '>                  {item.btnContact}
+                </div>
+                <div className='cursor-pointer w-[366px] md:w-[242px] lg:w-[242px] lg:h-[56px] rounded-[12px] border-2 border-solid border-white leading-[56px] text-center ml-10'>
+                    {item.btnView}
+                </div>
+            </div>
             </div>
         </div>
 
