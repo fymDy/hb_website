@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 14:51:40
- * @LastEditTime: 2024-08-25 16:35:56
+ * @LastEditTime: 2024-08-25 17:54:15
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/Home/index.tsx
@@ -29,7 +29,8 @@ const Home: React.FC = () => {
     },
   ];
   return (
-    <div className="HomePage ">
+    <div className="HomePage  ">
+      <div className="bg-[#EDF5F3]">
       <div
         style={{
           position:"absolute",
@@ -42,17 +43,11 @@ const Home: React.FC = () => {
         }}
         className="w-full h-[896px] md:h-[1024px] lg:h-[1080px]"
       >
-        {
-        //   isMobile() ?
-        //   <div className="MySwiper w-screen">
-        //   <div className={`MySwiper_content mx-auto }`}>
-        //     <MySwiper swiperData={swiperData}></MySwiper>
-        //   </div>
-        // </div>:
+      
           <div className="MySwiper  justify-center  h-[896px] md:h-[1024px] lg:h-[1650px] mx-auto mt-[100px] ">
             <MySwiper swiperData={swiperData}></MySwiper>
-        </div>
-        }
+         </div>
+      </div>
       </div>
     </div>
   );

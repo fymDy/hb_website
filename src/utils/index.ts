@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-24 19:28:03
- * @LastEditTime: 2024-08-25 16:14:49
+ * @LastEditTime: 2024-08-25 18:12:10
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/utils/index.ts
@@ -9,7 +9,7 @@
 
 export const  isMobile=()=> {
     const userAgent = navigator.userAgent  ;
-    debugger
+
     function isIpad() {
       return /iPad|Macintosh/.test(userAgent) && 'ontouchend' in document;
     }

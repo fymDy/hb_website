@@ -12,14 +12,16 @@ interface DrawerProps {
 // 一个从右边出现的抽屉
 function MyDrawer({ visible,onClose, children }: DrawerProps) {
   return(
-    <div>
+    <div className="h-full md:h-full">
             <Popup
               visible={visible}
               onMaskClick={onClose}
               position='left'
-              bodyStyle={{ width: '85vw' }}
+              bodyStyle={{ width: '85vw',backgroundColor: '#292F36' }}
             >
-             <div style={{ padding: 20 }}></div>
+             <div className="px-5">
+              {children}
+             </div>
             </Popup>
     </div>
   )

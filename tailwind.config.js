@@ -1,6 +1,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true, // 全局启用 !important
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     /* false：默认情况下不启用暗模式
     * 'media'：基于用户操作系统或浏览器的颜色模式偏好（如操作系统的暗模式设置）来启用暗模式
@@ -9,6 +10,7 @@ module.exports = {
   darkMode: 'media',  // 可选值:false, 'media' 或 'class'
   theme: {
     extend: {
+   
       backgroundImageGradient: {
         'custom-gradient': 'linear-gradient(to right, #A4D3A4 0%, #4BA48C 100%)',
       },
