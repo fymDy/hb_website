@@ -1,13 +1,13 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-25 15:40:54
- * @LastEditTime: 2024-08-25 18:15:48
+ * @LastEditTime: 2024-08-25 20:23:45
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/index.tsx
  */
 import ChangeLanguage from "@/components/ChangeLanguage";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import HeaderLogo from "@/components/HeaderTop/logo";
 import HeaderMenu from "@/components/HeaderTop/menu";
@@ -20,6 +20,7 @@ import { routerPath, useRouterUtil } from "@/routes/RouterUtil";
 const Main: React.FC = () => {
     const routerUtil= useRouterUtil()
   const [visible, setVisible] = useState(false);
+  const [isMobileDev, setIsMobileDev] = useState(false);
   const menuData: string[] = [
     "About",
     "Services",
@@ -35,15 +36,31 @@ const Main: React.FC = () => {
         routerUtil.navigatePath(item)
     }
   }
+  const handleResize=()=> {
+    if (isMobile()) {
+      setIsMobileDev(true)
+    } else {
+      setIsMobileDev(false)
+    }
+  }
+  useEffect(()=>{
+    // 在页面加载时检查
+    handleResize();
+    // 在窗口大小调整时检查
+    window.addEventListener('resize', handleResize);
+ 
+  },[])
+
+
   return (
     <div className="Main">
-      {!isMobile() && (
-        <div className="pc-setting">
+      {!isMobileDev && (
+        <div className="container pc-setting  lg:h-[52px]">
           <ChangeLanguage></ChangeLanguage>
         </div>
       )}
-      {isMobile() && (
-        <div className="w-full h5-header  absolute z-[1001] mt-[42px] md:mt-[36px]">
+      {isMobileDev && (
+        <div className="w-screen h5-header  absolute z-[1001] mt-[42px] md:mt-[36px]">
           <div className="w-[382px] md:w-[720px]">
             <div className=" absolute left-5">
               <HeaderLogo></HeaderLogo>
@@ -76,8 +93,8 @@ const Main: React.FC = () => {
           </MyDrawer>
         </div>
       )}
-      {!isMobile() && (
-        <div className="flex flex-row justify-between items-center  lg:w-[1650px] mx-auto  h-[38px] md:h-[50px] lg:h-[84px]  absolute z-10 lg:top-[52px]  transform left-1/2  -translate-x-1/2 ">
+      {!isMobileDev && (
+        <div className="flex flex-row justify-between items-center lg:w-[1650px]  absolute  z-10 h-[38px] md:h-[50px] lg:h-[84px]   lg:top-[52px]  ">
           <HeaderLogo></HeaderLogo>
           <HeaderMenu menuData={menuData} onClickItem={onClickMenuItem}></HeaderMenu>
         </div>
@@ -88,3 +105,5 @@ const Main: React.FC = () => {
 };
 
 export default Main;
+
+

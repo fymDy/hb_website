@@ -76,41 +76,42 @@
     //     flexible.rem = win.rem = rem;
     // }
 
-    function refreshRem(){
-        var width = docEl.getBoundingClientRect().width;
+    // function refreshRem(){
+    //     var width = docEl.getBoundingClientRect().width;
 
+    //     if (width > 620) {
+    //         // PC端设备
+    //         docEl.style.fontSize = '12px'; 
+    //         flexible.rem = win.rem = 12;
+    //     } else {
+    //         if (width / dpr > 540) {
+    //             width = 540 * dpr;
+    //         }
+    //         var rem = width / 34.5; //基准值： 设计稿414/12px =34.5  1rem=12px
+    //         docEl.style.fontSize = rem + 'px';
+    //         flexible.rem = win.rem = rem;
+    //     }
+    // }
+    function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+    
         if (width > 620) {
-            // PC端设备
-            docEl.style.fontSize = '12px'; 
-            flexible.rem = win.rem = 12;
+            // PC端设备 - 动态设置基准值
+            var baseSize = 16; // 基准大小
+            var scale = width / 1920; // 假设设计稿是1920px
+            var fontSize = baseSize * scale; // 动态计算fontSize
+            docEl.style.fontSize = fontSize + 'px';
+            flexible.rem = win.rem = fontSize;
         } else {
             if (width / dpr > 540) {
                 width = 540 * dpr;
             }
-            var rem = width / 34.5; //基准值： 设计稿414/12px =34.5  1rem=12px
+            var rem = width / 34.5; // 基准值：设计稿414/12px =34.5，1rem=12px
             docEl.style.fontSize = rem + 'px';
             flexible.rem = win.rem = rem;
         }
     }
-
-    // function refreshRem(){
-    //     var width = docEl.getBoundingClientRect().width;
-    //     // if (width / dpr > 540) {
-    //     //     width = 540 * dpr;
-    //     // }
-    //  // 根据设备类型设置不同的 rem 基准值
-    //  var rem;
-    //  if (width >= 1024) { // PC 端
-    //      rem = 192;
-    //  } else if (width >= 768) { // 平板端
-    //      rem = 76.8;
-    //  } else { // 移动端
-    //      rem = 41.4;
-    //  }
-    //     docEl.style.fontSize = rem + 'px';
-    //     flexible.rem = win.rem = rem;
-    // }
-
+  
     win.addEventListener('resize', function() {
         clearTimeout(tid);
         tid = setTimeout(refreshRem, 300);
