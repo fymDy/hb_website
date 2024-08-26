@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-24 18:19:57
- * @LastEditTime: 2024-08-25 19:49:26
+ * @LastEditTime: 2024-08-26 11:28:54
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/components/HeaderTop/menu.tsx
@@ -25,7 +25,7 @@ const HeaderMenu: React.FC< HeaderMenuProps>= ({menuData,onClickItem }) => {
 
   return (
     // <div className="HeaderMenu grid grid-cols-6 gap-[10px] ">
-    <div className="HeaderMenu container grid grid-cols-6 gap-[10px] lg:w-[918px] ">
+    <div className="HeaderMenu hidden md:flex space-x-6 ">
        {
                 menuData.map((item:string,i:number)=><div  key={i}   className={` cursor-pointer text-white hover:text-yellow-100 lg:text-[18px] cursor-pointer transition duration-300 ${i > 3 ? 'text-right' : ''}`} onClick={()=>{
                   onClickItem(i,item) 

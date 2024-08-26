@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-25 15:40:54
- * @LastEditTime: 2024-08-25 20:23:45
+ * @LastEditTime: 2024-08-26 12:12:06
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/index.tsx
@@ -53,20 +53,17 @@ const Main: React.FC = () => {
 
 
   return (
-    <div className="Main">
-      {!isMobileDev && (
-        <div className="container pc-setting  lg:h-[52px]">
-          <ChangeLanguage></ChangeLanguage>
-        </div>
-      )}
+    <div className="Main container">
+      {!isMobileDev && (    <ChangeLanguage></ChangeLanguage> )}
       {isMobileDev && (
-        <div className="w-screen h5-header  absolute z-[1001] mt-[42px] md:mt-[36px]">
-          <div className="w-[382px] md:w-[720px]">
-            <div className=" absolute left-5">
-              <HeaderLogo></HeaderLogo>
-            </div>
+        <div className=" h5-header ">
+          <div className=" container   z-[1001] top-[42px] md:top-[36px] absolute w-screen flex justify-between ">
+      
+           <div className="absolute left-5">
+           <HeaderLogo></HeaderLogo>
+           </div>
             <button
-              className="w-[38px] md:w-[48px]  absolute right-5 text-white "
+              className="w-[38px] md:w-[48px] absolute right-5  text-white "
               onClick={() => setVisible(!visible)}
             >
               <img src={btnMenu} className="" />
@@ -94,9 +91,11 @@ const Main: React.FC = () => {
         </div>
       )}
       {!isMobileDev && (
-        <div className="flex flex-row justify-between items-center lg:w-[1650px]  absolute  z-10 h-[38px] md:h-[50px] lg:h-[84px]   lg:top-[52px]  ">
+        <div className="  z-10 h-[38px] md:h-[50px] lg:h-[84px]    absolute lg:top-[52px]  ">
+         <div className="container mx-auto flex justify-between items-center py-5 px-32 w-screen">
           <HeaderLogo></HeaderLogo>
           <HeaderMenu menuData={menuData} onClickItem={onClickMenuItem}></HeaderMenu>
+          </div>
         </div>
       )}
       <Outlet />
