@@ -1,33 +1,34 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // 导入基本样式
 
 // 导入所需的模块样式
-import 'swiper/css/navigation';
+import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 // 分别导入模块
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { isMobile } from '@/utils';
-
+import './index.css'
 const MySwiper = ({swiperData}:any) => {
   return (
+    <div className='MySwiper mx-6 md:mx-7 lg:ml-[140px] lg:mt-14 lg:mb-44'>
     <Swiper
+      // modules={[Pagination]}
       spaceBetween={50}
       slidesPerView={1}
-    //   navigation
-      pagination={{ clickable: true 
-      }}
+      navigation={false}
+      // pagination={{
+      //   clickable: true,
+      //   renderBullet: (index:number, className:any) => {
+      //     return `<span class="${className} custom-bullet"></span>`;
+      //   },
+      // }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper:any) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-      modules={[ Pagination]} // 注册模块
     >
   { 
      swiperData?.map((item: any, i: number) => ( <SwiperSlide key={i}>
-        <div  className='w-[382px]  md:w-[696px]  lg:w-[1650px] h-[896px] md:h-[1024px]  lg:h-[536px]  lg:mt-[130px] mx-auto '>  
-            <div className='lg:ml-[140px]'>
+        <div  className=' container  w-full   '>  
             <p className={`text-[54px] md:text-[84px] lg:text-[84px] text-white font-black`}>{item.text1}</p>
             <p className={`text-[54px] md:text-[84px] lg:text-[84px] text-white  font-normal`}>{item.text2}</p>
             <div className='flex text-white  text-[12px]  mt-[30px] md:mt-[50px] lg:mt-[60px]'>
@@ -38,11 +39,12 @@ const MySwiper = ({swiperData}:any) => {
                 </div>
             </div>
             </div>
-        </div>
+      
 
        </SwiperSlide>))
   }
     </Swiper>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 14:51:40
- * @LastEditTime: 2024-08-26 11:38:22
+ * @LastEditTime: 2024-08-26 14:52:14
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/Home/index.tsx
@@ -29,26 +29,25 @@ const Home: React.FC = () => {
     },
   ];
   return (
-    <div className="HomePage  ">
-      <div className="bg-[#EDF5F3]">
+    <div className="HomePage  h-[896px] md:h-[1024px] lg:h-[1080px]  bg-[#EDF5F3]">
+      <div className="w-full  h-[896px] md:h-[1024px] lg:h-[1080px] absolute z-10   bg-[#2f3e46] opacity-60"></div>
       <div
         style={{
           position:"absolute",
           top:'0',
-          // zIndex:0,
+          zIndex:0,
           backgroundImage: `url(${bgHeader})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           // 可以根据条件动态设置其他样式
         }}
         className="w-full h-[896px] md:h-[1024px] lg:h-[1080px]"
-      >
-           <div className="MySwiper  justify-center  h-[896px] md:h-[1024px] lg:h-[1650px] mx-auto mt-[100px] ">
-            <MySwiper swiperData={swiperData}></MySwiper>
+      > 
+      </div>
+        {/* <div className="MySwiper  h-[896px] md:h-[1024px] lg:h-[780px]  "> */}
+        <div className="MySwiper_Wrap container absolute z-20 top-[166px] lg:left-32 lg:border-l  lg:border-solid lg:border-white ">
+           <MySwiper swiperData={swiperData}></MySwiper>
          </div>
-      </div>
- 
-      </div>
     </div>
   );
 };

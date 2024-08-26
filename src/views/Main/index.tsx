@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-25 15:40:54
- * @LastEditTime: 2024-08-26 12:12:06
+ * @LastEditTime: 2024-08-26 13:54:17
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/index.tsx
@@ -91,8 +91,8 @@ const Main: React.FC = () => {
         </div>
       )}
       {!isMobileDev && (
-        <div className="  z-10 h-[38px] md:h-[50px] lg:h-[84px]    absolute lg:top-[52px]  ">
-         <div className="container mx-auto flex justify-between items-center py-5 px-32 w-screen">
+        <div className="  z-20 h-[38px] md:h-[50px] lg:h-[84px]    absolute lg:top-[52px]  ">
+         <div className="container  w-screen  flex justify-between items-center py-5 px-32">
           <HeaderLogo></HeaderLogo>
           <HeaderMenu menuData={menuData} onClickItem={onClickMenuItem}></HeaderMenu>
           </div>

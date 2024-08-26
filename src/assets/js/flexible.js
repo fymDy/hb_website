@@ -97,7 +97,7 @@
     
         if (width > 620) {
             // PC端设备 - 动态设置基准值
-            var baseSize = 16; // 基准大小
+            var baseSize = 12; // 基准大小
             var scale = width / 1920; // 假设设计稿是1920px
             var fontSize = baseSize * scale; // 动态计算fontSize
             docEl.style.fontSize = fontSize + 'px';
