@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 16:12:25
- * @LastEditTime: 2024-08-27 15:50:09
+ * @LastEditTime: 2024-08-27 17:53:05
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/Main/Home/components/content1/index.tsx
@@ -12,7 +12,7 @@ import img1 from './images/1.png'
 import img2 from './images/2.png'
 import img3 from './images/3.png'
 
-const Home: React.FC = () => {
+const Content1: React.FC = () => {
   const  iconDom=<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
   <rect x="14.1422" y="0.357849" width="20" height="20" rx="6" transform="rotate(45 14.1422 0.357849)" stroke="url(#paint0_linear_198_809)" stroke-width="3"/>
   <defs>
@@ -75,4 +75,4 @@ const Home: React.FC = () => {
   </div>;
 }
 
-export default Home;
+export default Content1;

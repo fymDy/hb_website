@@ -1,7 +1,7 @@
 /*
  * @Author: Mark
  * @Date: 2024-08-23 14:51:40
- * @LastEditTime: 2024-08-27 11:29:39
+ * @LastEditTime: 2024-08-27 17:54:00
  * @LastEditors: MarkMark
  * @Description: 佛祖保佑无bug
  * @FilePath: /hb_website/src/views/main/Home/index.tsx
@@ -13,6 +13,7 @@ import bgHeader from "@/assets/images/home/bg_header.png";
 import MySwiper from "@/components/MySwiper";
 import { isMobile } from "@/utils";
 import Content1 from "./components/content1";
+import Content2 from "./components/content2";
 
 const Home: React.FC = () => {
   const swiperData = [
@@ -50,6 +51,7 @@ const Home: React.FC = () => {
             </div>
       </div>
       <Content1></Content1>
+      <Content2></Content2>
     </div>
   );
 };
